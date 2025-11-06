@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 
 import Articles from "./pages/Articles";
+import ArticleDetailPage from "./pages/ArticleDetailPage";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/articles" element={<Articles />} />
+          <Route path="/articles/:slug" element={<ArticleDetailPage />} />
         </Routes>
       </main>
       <Footer />

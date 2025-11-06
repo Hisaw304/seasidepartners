@@ -136,7 +136,7 @@ export default function Articles() {
               Stay informed with the latest legal updates, expert commentary,
               and practical guides from our team of attorneys.
             </motion.p>
-            {/* 
+
             <div className="mt-6 flex gap-3">
               <a
                 href="#articles-grid"
@@ -145,7 +145,7 @@ export default function Articles() {
               >
                 Browse articles
               </a>
-            </div> */}
+            </div>
           </div>
         </div>
       </section>
@@ -230,52 +230,39 @@ export default function Articles() {
                   key={a._id}
                   custom={(idx % 6) * 0.04}
                   variants={cardVariants}
-                  className="rounded-2xl overflow-hidden bg-white shadow-lg border"
-                  style={{ borderColor: "rgba(2,6,23,0.04)" }}
+                  className="rounded-2xl bg-white shadow-lg border flex flex-col"
+                  style={{ borderColor: "rgba(2,6,23,0.05)" }}
                 >
                   <div className="relative">
                     {a.image ? (
                       <img
                         src={a.image}
                         alt={a.title}
-                        className="w-full h-48 object-cover"
+                        className="w-full h-48 object-cover rounded-t-2xl"
                       />
                     ) : (
-                      <div className="w-full h-48 bg-gradient-to-r from-slate-100 to-slate-200" />
+                      <div className="w-full h-48 bg-gradient-to-r from-slate-100 to-slate-200 rounded-t-2xl" />
                     )}
-                    <div
-                      className="absolute left-4 top-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
-                      style={{ background: "rgba(255,255,255,0.9)" }}
-                    >
-                      <span
-                        className="text-xs font-medium"
-                        style={{ color: "var(--dark-blue)" }}
-                      >
+
+                    <div className="absolute left-4 top-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90">
+                      <span className="text-xs font-medium text-slate-800">
                         {formatDate(a.date)}
                       </span>
                     </div>
                   </div>
 
-                  <div className="p-5 flex flex-col h-full">
-                    <h3
-                      className="text-lg font-semibold mb-2"
-                      style={{ color: "var(--dark-blue)" }}
-                    >
+                  <div className="p-5 flex flex-col flex-1">
+                    <h3 className="text-lg font-semibold mb-2 text-slate-900">
                       {a.title}
                     </h3>
-
-                    <p
-                      className="text-sm text-muted mb-4"
-                      style={{ color: "rgba(3,12,30,0.7)" }}
-                    >
+                    <p className="text-sm text-slate-600 mb-4">
                       {a.excerpt || ""}
                     </p>
 
                     <div className="mt-auto pt-3">
                       <a
                         href={`/articles/${a.slug || a._id}`}
-                        className="inline-flex items-center gap-2 text-sm font-medium"
-                        style={{ color: "var(--color-accent)" }}
+                        className="inline-flex items-center gap-2 text-sm font-medium text-[var(--color-accent)] hover:underline"
                       >
                         Read article
                         <svg
