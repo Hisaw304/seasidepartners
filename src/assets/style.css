@@ -1,0 +1,100 @@
+:root {
+  --color-white: #ffffff;
+  --color-dark-blue: #0b3777; /* site text color */
+  --color-accent: #48acba; /* hover / accent */
+  --white: #ffffff;
+  --dark-blue: #0b3777;
+  --accent: #48acba;
+}
+
+/* Ensure base text uses dark blue */
+html,
+body,
+#root {
+  height: 100%;
+  background: #f5f6f8;
+  color: var(--color-dark-blue);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial;
+}
+
+/* NAV LINKS - desktop */
+.nav-link {
+  color: var(--color-dark-blue);
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 150ms ease;
+  text-decoration: none;
+}
+
+/* underline grow effect using accent (on hover) */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--color-accent);
+  transition: width 180ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--color-accent);
+}
+.nav-link:hover::after,
+.nav-link:focus::after {
+  width: 100%;
+}
+
+/* MOBILE nav link style (stacked) */
+.nav-link-mobile {
+  color: var(--color-dark-blue);
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+}
+.nav-link-mobile:hover {
+  color: var(--color-accent);
+}
+
+/* Footer link style (no gray) */
+.footer-link {
+  color: var(--color-dark-blue);
+  text-decoration: none;
+  transition: color 160ms ease, transform 160ms ease;
+}
+.footer-link:hover,
+.footer-link:focus {
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* social icon style */
+.social-link {
+  color: var(--color-dark-blue);
+  transition: transform 140ms ease, color 140ms ease;
+}
+.social-link:hover,
+.social-link:focus {
+  transform: translateY(-3px);
+  color: var(--color-accent);
+}
+
+/* focus outlines (accessible) */
+:focus {
+  outline: 3px solid rgba(72, 172, 186, 0.18);
+  outline-offset: 2px;
+}
+
+/* small responsive tweaks */
+@media (min-width: 768px) {
+  .nav-link {
+    font-size: 0.95rem;
+  }
+}
+button,
+a {
+  transition: all 0.3s ease;
+}
