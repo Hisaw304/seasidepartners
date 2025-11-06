@@ -110,14 +110,14 @@ export default function Footer() {
             <br />
             <div>
               email:{" "}
-              <a href="mailto:info@seasidepartner.com" className="footer-link">
-                info@seasidepartner.com
+              <a href="mailto:info@seasidepartner.org" className="footer-link">
+                info@seasidepartner.org
               </a>
             </div>
             <div>
               phone:{" "}
-              <a href="tel:+1234567890" className="footer-link">
-                +1 (234) 567-890
+              <a href="tel:+2349013916630" className="footer-link">
+                +234 901 391 6630
               </a>
             </div>
           </address>

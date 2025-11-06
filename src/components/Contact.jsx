@@ -386,10 +386,10 @@ export default function Contact() {
                     <div className="flex items-center gap-3">
                       <FaEnvelope style={{ color: "var(--accent)" }} />
                       <a
-                        href="mailto:info@seasidepartners.com"
+                        href="mailto:info@seasidepartners.org"
                         className="text-white/90 hover:text-white"
                       >
-                        info@seasidepartners.com
+                        info@seasidepartners.org
                       </a>
                     </div>
 

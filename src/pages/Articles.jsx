@@ -122,7 +122,7 @@ export default function Articles() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="text-4xl md:text-5xl font-serif font-extrabold leading-tight"
-              style={{ color: "var(--dark-blue)" }}
+              style={{ color: "var(--white)" }}
             >
               Legal Insights & Articles
             </motion.h1>

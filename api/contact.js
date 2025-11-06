@@ -48,7 +48,7 @@ module.exports = async (req, res) => {
   const port = 465;
   const secure = true;
   const CONTACT_TO = "info@seasidepartners.com";
-  const CONTACT_FROM = `"Seaside Partners" <info@seasidepartners.com>`;
+  const CONTACT_FROM = `"Seaside Partners" <info@seasidepartners.org>`;
   const CONTACT_SUBJECT_PREFIX = "Seaside Partners –";
   const SEND_CLIENT_COPY = true;
 
