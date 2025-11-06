@@ -16,7 +16,7 @@ import { FaChevronDown, FaSearch } from "react-icons/fa";
 const FAQ_ITEMS = [
   {
     q: "How do I book a consultation?",
-    a: "You can book a consultation by clicking 'Book an Appointment' in the header or by calling our office at +234 (0) 803 716 0410. We offer in-person and virtual consultations.",
+    a: "You can book a consultation by clicking 'Book an Appointment' in the header or by calling our office at +234 (0) 901 391 6630. We offer in-person and virtual consultations.",
   },
   {
     q: "What should I bring to my first meeting?",
