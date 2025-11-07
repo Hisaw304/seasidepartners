@@ -58,7 +58,7 @@ export default function Hero() {
       }}
     >
       {/* Overlay — dark blue with reduced intensity */}
-      <div className="absolute inset-0 bg-[var(--color-dark-blue)]/60" />
+      <div className="absolute inset-0 bg-[var(--color-dark-blue)]/90" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
         <motion.div
