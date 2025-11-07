@@ -8,7 +8,7 @@ import {
   FaClock,
   FaTwitter,
   FaInstagram,
-  FaFacebookF,
+  FaTiktok,
 } from "react-icons/fa";
 
 /**
@@ -424,28 +424,24 @@ export default function Contact() {
                     <div className="text-sm text-white/80 mb-3">Follow us</div>
                     <nav className="flex items-center gap-3">
                       <a
-                        href="#"
-                        aria-label="Twitter"
+                        href="https://www.instagram.com/theseasidepartners?igsh=MWIzMWplb3kyeTd3ZA=="
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="p-2 rounded-full bg-white/6 hover:bg-white/12 transition"
-                        style={{ color: "var(--white)" }}
-                      >
-                        <FaTwitter />
-                      </a>
-                      <a
-                        href="#"
                         aria-label="Instagram"
-                        className="p-2 rounded-full bg-white/6 hover:bg-white/12 transition"
                         style={{ color: "var(--white)" }}
                       >
-                        <FaInstagram />
+                        <FaInstagram className="w-4 h-4" />
                       </a>
                       <a
-                        href="#"
-                        aria-label="Facebook"
+                        href="https://www.tiktok.com/@theseasidepartners?_r=1&_t=ZS-917QdpLuEC2"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="p-2 rounded-full bg-white/6 hover:bg-white/12 transition"
+                        aria-label="TikTok"
                         style={{ color: "var(--white)" }}
                       >
-                        <FaFacebookF />
+                        <FaTiktok className="w-4 h-4" />
                       </a>
                     </nav>
                   </div>

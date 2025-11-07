@@ -6,17 +6,10 @@ import {
   FaInstagram,
   FaFacebookF,
   FaPhoneAlt,
+  FaTiktok,
 } from "react-icons/fa";
 import seaside from "../assets/seasidepartners.jpg";
 import seasideHero from "../assets/seaside-hero.jpg";
-
-/**
- * Modern Hero (revamped)
- * - Removed white bg from the top pill as requested.
- * - Mobile stats card flows naturally (relative) and slides up gently into view.
- * - Desktop image card unchanged visually but tuned for spacing.
- * - Uses Tailwind utility classes instead of inline styles where possible.
- */
 
 /* Animation variants */
 const container = {
@@ -140,15 +133,9 @@ export default function Hero() {
                   className="flex items-center gap-3"
                 >
                   <a
-                    href="#"
-                    className="p-2 rounded-full bg-white/6 hover:bg-white/12 transition"
-                    aria-label="Twitter"
-                    style={{ color: "var(--white)" }}
-                  >
-                    <FaTwitter className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="#"
+                    href="https://www.instagram.com/theseasidepartners?igsh=MWIzMWplb3kyeTd3ZA=="
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-2 rounded-full bg-white/6 hover:bg-white/12 transition"
                     aria-label="Instagram"
                     style={{ color: "var(--white)" }}
@@ -156,12 +143,14 @@ export default function Hero() {
                     <FaInstagram className="w-4 h-4" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.tiktok.com/@theseasidepartners?_r=1&_t=ZS-917QdpLuEC2"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-2 rounded-full bg-white/6 hover:bg-white/12 transition"
-                    aria-label="Facebook"
+                    aria-label="TikTok"
                     style={{ color: "var(--white)" }}
                   >
-                    <FaFacebookF className="w-4 h-4" />
+                    <FaTiktok className="w-4 h-4" />
                   </a>
                 </nav>
               </div>
@@ -231,9 +220,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* MOBILE + MEDIUM (md) : Stats at bottom (relative) with slide-up animation
-      — VISIBLE for screens smaller than lg (i.e. mobile + medium/tablet widths)
-      — HIDDEN on lg and above. */}
       <motion.div
         className="block lg:hidden mt-10 px-4 pb-6"
         initial="hidden"

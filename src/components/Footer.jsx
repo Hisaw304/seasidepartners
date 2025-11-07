@@ -12,7 +12,7 @@ export default function Footer() {
   const socials = [
     {
       name: "Instagram",
-      href: "https://instagram.com",
+      href: "https://www.instagram.com/theseasidepartners?igsh=MWIzMWplb3kyeTd3ZA==",
       svg: (
         <svg
           className="h-5 w-5"
@@ -28,32 +28,16 @@ export default function Footer() {
       ),
     },
     {
-      name: "Twitter",
-      href: "https://twitter.com",
+      name: "TikTok",
+      href: "https://www.tiktok.com/@theseasidepartners?_r=1&_t=ZS-917QdpLuEC2",
       svg: (
         <svg
           className="h-5 w-5"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+          fill="currentColor"
         >
-          <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0016 2a4.5 4.5 0 00-4.47 5.5A12.94 12.94 0 013 4s-4 9 5 13a13 13 0 01-8 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-        </svg>
-      ),
-    },
-    {
-      name: "Facebook",
-      href: "https://facebook.com",
-      svg: (
-        <svg
-          className="h-5 w-5"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path d="M18 2h-3a4 4 0 00-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 011-1h3z" />
+          <path d="M448,209.9a210,210,0,0,1-122.77-39.32V349.14A162.86,162.86,0,1,1,185,188.08v83.62a79.27,79.27,0,1,0,55.23,75V0h85a123.31,123.31,0,0,0,123,123Z" />
         </svg>
       ),
     },
