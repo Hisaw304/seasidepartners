@@ -1,50 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Charset + Viewport -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Required meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <!-- Title + Description -->
-    <title>Seaside Legal | Expert Legal Insights & Articles</title>
+    <!-- Primary SEO -->
+    <title>Seaside Partners — Expert Legal Insights, Articles & Advice</title>
     <meta
       name="description"
-      content="Stay informed with expert legal insights, articles, and updates from Seaside Legal’s experienced attorneys."
+      content="Seaside Partners — expert legal insights, practical guides and timely commentary from experienced attorneys. Read our articles on contracts, litigation, corporate law and more."
     />
     <meta
       name="keywords"
-      content="Seaside Legal, law firm, legal blog, attorney insights, legal updates, business law, contracts, litigation"
+      content="Seaside Partners, law firm, legal articles, legal insights, litigation, corporate law, contracts, legal advice"
     />
-    <meta name="author" content="Seaside Legal" />
+    <meta name="author" content="Seaside Partners" />
+    <meta name="robots" content="index,follow" />
 
-    <!-- Favicon & App Icons -->
-    <link rel="icon" type="image/png" href="/logo.png" />
-    <link rel="apple-touch-icon" href="/logo.png" />
+    <!-- Canonical (change to the final canonical URL if different) -->
+    <link rel="canonical" href="https://www.seasidepartners.org/" />
 
-    <meta property="og:title" content="Seaside Legal | Expert Legal Insights" />
+    <!-- Favicons & App icons (replace with your actual asset files if different) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo.png" />
+    <link rel="apple-touch-icon" href="/assets/logo.png" />
+
+    <!-- Social preview (use absolute URLs) -->
+    <meta property="og:site_name" content="Seaside Partners" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Seaside Partners — Expert Legal Insights"
+    />
     <meta
       property="og:description"
-      content="Explore Seaside Legal’s articles for the latest insights and guidance on business law, contracts, and more."
+      content="Browse Seaside Partners' articles for practical legal guidance and expert commentary on business and personal legal matters."
     />
-    <meta property="og:image" content="/assets/hero.jpg" />
-    <meta property="og:url" content="https://seasidepartners.org" />
-    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.seasidepartners.org/" />
+    <meta
+      property="og:image"
+      content="https://www.seasidepartners.org/assets/hero.jpg"
+    />
+    <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@theseasidepartners" />
     <meta
       name="twitter:title"
-      content="Seaside Legal | Expert Legal Insights"
+      content="Seaside Partners — Expert Legal Insights"
     />
     <meta
       name="twitter:description"
-      content="Stay informed with legal insights and practical guides from Seaside Legal."
+      content="Browse Seaside Partners' articles for practical legal guidance and expert commentary on business and personal legal matters."
     />
-    <meta name="twitter:image" content="/assets/hero.jpg" />
+    <meta
+      name="twitter:image"
+      content="https://www.seasidepartners.org/assets/hero.jpg"
+    />
 
+    <!-- Preconnect / Preload for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="preload" as="image" href="/assets/hero.jpg" />
+    <link rel="preload" as="image" href="/assets/logo.png" />
+
+    <!-- Sitemap (helpful for crawlers) -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.seasidepartners.org/#org",
+            "name": "Seaside Partners",
+            "url": "https://www.seasidepartners.org/",
+            "logo": "https://www.seasidepartners.org/assets/logo.png",
+            "sameAs": [
+              "https://www.instagram.com/theseasidepartners?igsh=MWIzMWplb3kyeTd3ZA==",
+              "https://www.tiktok.com/@theseasidepartners?_r=1&_t=ZS-917QdpLuEC2",
+              "https://www.linkedin.com/company/seaside-partners"
+            ],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+23409013916630",
+                "contactType": "customer service",
+                "areaServed": "NG",
+                "availableLanguage": ["English"]
+              }
+            ]
+          },
+          {
+            "@type": "LegalService",
+            "@id": "https://www.seasidepartners.org/#office-ikeja",
+            "name": "Seaside Partners — Allen, Ikeja",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "14 Allen Avenue",
+              "addressLocality": "Ikeja",
+              "addressRegion": "Lagos",
+              "addressCountry": "NG"
+            },
+            "telephone": "+23409013916630",
+            "url": "https://www.seasidepartners.org/contact#ikeja"
+          },
+          {
+            "@type": "LegalService",
+            "@id": "https://www.seasidepartners.org/#office-gwarinpa",
+            "name": "Seaside Partners — Gwarinpa",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "C Close 194, Kafe Garden",
+              "addressLocality": "Gwarinpa",
+              "addressRegion": "Abuja",
+              "addressCountry": "NG"
+            },
+            "telephone": "+23409013916630",
+            "url": "https://www.seasidepartners.org/contact#gwarinpa"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Basic inline CSS critical for FOUC prevention (optional) -->
+    <style>
+      html {
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      body {
+        margin: 0;
+        background-color: #ffffff;
+        color: #03122b;
+        -webkit-text-size-adjust: 100%;
+      }
+      /* minimal helper so bots rendering server-side see a decent preview */
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    </style>
   </head>
+
   <body>
+    <!-- Important: root for React app -->
     <div id="root"></div>
+
+    <!-- noscript fallback for crawlers / users with JS disabled -->
+    <noscript>
+      <div
+        style="
+          padding: 24px;
+          max-width: 900px;
+          margin: 24px auto;
+          background: #fff;
+          border-radius: 8px;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        "
+      >
+        <h1>Seaside Partners</h1>
+        <p>
+          JavaScript is required to view this site. Please enable JavaScript or
+          view the content from a modern browser.
+        </p>
+        <p><a href="https://www.seasidepartners.org/">Visit our site</a></p>
+      </div>
+    </noscript>
+
+    <!-- App entry (Vite / React) -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
