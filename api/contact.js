@@ -45,7 +45,7 @@ module.exports = async (req, res) => {
 
   // ✅ Hardcoded production-safe defaults for Seaside Partners
   const host = "mail.privateemail.com";
-  const port = 465;
+  const port = 587;
   const secure = true;
   const CONTACT_TO = "info@seasidepartners.org";
   const CONTACT_FROM = `"Seaside Partners" <info@seasidepartners.org>`;

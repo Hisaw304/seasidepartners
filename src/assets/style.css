@@ -98,3 +98,10 @@ button,
 a {
   transition: all 0.3s ease;
 }
+/* small helper to ensure text-clamp works */
+.testimonial-quote {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
