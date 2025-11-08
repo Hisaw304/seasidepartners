@@ -6,19 +6,63 @@ function sanitize(input = "") {
     .replace(/<[^>]*>?/gm, "")
     .trim();
 }
-
 function validEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
+function escapeHtml(unsafe = "") {
+  return String(unsafe)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
 
 module.exports = async (req, res) => {
+  const startTs = Date.now();
   try {
+    console.log("=== /api/contact invoked ===");
+    console.log("Method:", req.method);
+
     if (req.method !== "POST") {
       res.setHeader("Allow", "POST");
+      console.log("Rejected non-POST request");
       return res.status(405).json({ error: "Method not allowed. Use POST." });
     }
 
-    const { name, email, phone, message } = req.body || {};
+    // defensive body parse
+    let body;
+    try {
+      body =
+        typeof req.body === "string"
+          ? JSON.parse(req.body || "{}")
+          : req.body || {};
+    } catch (parseErr) {
+      console.error("Failed to parse JSON body:", parseErr);
+      return res.status(400).json({ error: "Invalid JSON body." });
+    }
+
+    const ip =
+      req.headers["x-forwarded-for"]?.split(",")?.[0]?.trim() ||
+      req.socket?.remoteAddress ||
+      "unknown";
+    console.log("Request IP:", ip);
+
+    // log incoming (sanitized) body for debugging — avoid logging sensitive info
+    const safeBody = {
+      name: body.name ? String(body.name).slice(0, 200) : undefined,
+      email: body.email ? String(body.email).slice(0, 200) : undefined,
+      phone: body.phone ? String(body.phone).slice(0, 50) : undefined,
+      message:
+        body.message && String(body.message).length > 0
+          ? `${String(body.message).slice(0, 200)}${
+              String(body.message).length > 200 ? " (truncated)" : ""
+            }`
+          : undefined,
+    };
+    console.log("Parsed body (sanitized preview):", safeBody);
+
+    const { name, email, phone, message } = body || {};
 
     const sName = sanitize(name || "");
     const sEmail = sanitize(email || "");
@@ -40,35 +84,43 @@ module.exports = async (req, res) => {
     if (sMessage.length > 5000) errors.message = "Message too long.";
 
     if (Object.keys(errors).length > 0) {
+      console.log("Validation failed:", errors);
       return res
         .status(422)
         .json({ error: "Validation failed", details: errors });
     }
 
-    // Config (prefer env vars; sensible defaults)
+    // Config from environment (Vercel .env)
     const host = process.env.SMTP_HOST || "mail.privateemail.com";
-    const port = parseInt(process.env.SMTP_PORT || "587", 10); // default to 587 (STARTTLS)
-    // secure should be false for STARTTLS (port 587). Only true for port 465 (implicit SSL).
+    const port = parseInt(process.env.SMTP_PORT || "587", 10);
+    // port 465 => implicit SSL, otherwise use STARTTLS (secure false)
     const secure = port === 465;
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASS;
     const CONTACT_TO = process.env.CONTACT_TO || "info@seasidepartners.org";
-    // use SMTP_USER as the from address if SMTP_FROM isn't provided
     const CONTACT_FROM =
       process.env.SMTP_FROM ||
       (smtpUser
         ? `"Seaside Partners" <${smtpUser}>`
         : `"Seaside Partners" <info@seasidepartners.org>`);
     const CONTACT_SUBJECT_PREFIX = "Seaside Partners –";
-    const SEND_CLIENT_COPY = true;
+    const SEND_CLIENT_COPY = process.env.SEND_CLIENT_COPY !== "false"; // default true
+
+    // Masked env logging for debugging
+    console.log("SMTP host/port:", host, port);
+    console.log("SMTP user present:", Boolean(smtpUser));
+    console.log("SMTP pass present:", Boolean(smtpPass));
+    console.log("CONTACT_TO:", CONTACT_TO);
+    console.log("CONTACT_FROM resolved:", CONTACT_FROM);
+    console.log(
+      "TLS_REJECT_UNAUTHORIZED:",
+      process.env.TLS_REJECT_UNAUTHORIZED || "unset (defaults to strict true)"
+    );
 
     if (!host || !port || !smtpUser || !smtpPass) {
-      console.error("Missing SMTP config in environment", {
-        host: Boolean(host),
-        port: Boolean(port),
-        smtpUser: Boolean(smtpUser),
-        smtpPass: Boolean(smtpPass),
-      });
+      console.error(
+        "Missing SMTP config in environment (one or more required values missing)"
+      );
       return res
         .status(500)
         .json({ error: "Server misconfigured. Contact admin." });
@@ -79,26 +131,29 @@ module.exports = async (req, res) => {
       transporter = nodemailer.createTransport({
         host,
         port,
-        secure, // false for STARTTLS (587)
-        auth: {
-          user: smtpUser,
-          pass: smtpPass,
-        },
-        // Use STARTTLS (requireTLS) on port 587 to upgrade the connection
+        secure, // true for 465, false for 587
+        auth: { user: smtpUser, pass: smtpPass },
         requireTLS: port === 587,
-        // Helpful timeouts for serverless to fail fast instead of hanging
+        // Fail fast in serverless
         connectionTimeout: 10_000,
         greetingTimeout: 10_000,
-        // Some hosting environments may have TLS issues; this relaxes strict CA checks.
-        // Keep as false in production unless you need it for debugging.
+        socketTimeout: 20_000,
         tls: {
-          rejectUnauthorized: process.env.TLS_REJECT_UNAUTHORIZED !== "false", // default: true; set env var to "false" to relax
+          // By default we want strict TLS. Set TLS_REJECT_UNAUTHORIZED=false in Vercel only for debugging.
+          rejectUnauthorized: process.env.TLS_REJECT_UNAUTHORIZED !== "false",
         },
       });
 
-      // NOTE: don't call transporter.verify() in serverless (can hang). rely on sendMail errors instead.
+      // Test whether transport object was created
+      console.log("Transporter created. Transport options preview: ", {
+        host,
+        port,
+        secure,
+        requireTLS: port === 587,
+      });
+      // NOTE: avoid transporter.verify() in serverless — it can hang/time out
     } catch (err) {
-      console.error("Failed creating transporter:", err);
+      console.error("Failed creating transporter:", err && (err.stack || err));
       return res.status(500).json({ error: "Failed to initialize mailer." });
     }
 
@@ -120,8 +175,17 @@ module.exports = async (req, res) => {
 
     const fromAddr = CONTACT_FROM;
 
+    // send admin email
     try {
-      await transporter.sendMail({
+      console.log(
+        "Sending admin email to:",
+        CONTACT_TO,
+        "from:",
+        fromAddr,
+        "replyTo:",
+        sEmail
+      );
+      const info = await transporter.sendMail({
         from: fromAddr,
         to: CONTACT_TO,
         replyTo: sEmail,
@@ -129,14 +193,27 @@ module.exports = async (req, res) => {
         text: `New contact submission\n\nName: ${sName}\nEmail: ${sEmail}\nPhone: ${sPhone}\n\nMessage:\n${sMessage}\n\nReceived: ${new Date().toISOString()}`,
         html: adminHtml,
       });
+      console.log("Admin email sent. nodemailer info:", {
+        messageId: info && info.messageId,
+        envelope: info && info.envelope,
+        accepted: info && info.accepted,
+        rejected: info && info.rejected,
+      });
     } catch (err) {
-      console.error("Error sending admin email:", err);
-      // Log err.code / err.response if present for diagnostics
+      // log full details for debugging
+      console.error("Error sending admin email:", {
+        message: err && err.message,
+        code: err && err.code,
+        response: err && err.response,
+        stack: err && err.stack,
+      });
+      // return helpful message to the frontend, but the logs contain details
       return res
         .status(500)
-        .json({ error: "Failed to send email. Please try again later." });
+        .json({ error: "Failed to send email. See server logs for details." });
     }
 
+    // optional client confirmation
     if (SEND_CLIENT_COPY && sEmail) {
       const clientSubject = `${CONTACT_SUBJECT_PREFIX} We received your message`;
       const clientHtml = `
@@ -161,24 +238,31 @@ module.exports = async (req, res) => {
           text: `Thanks ${sName},\n\nWe received your message and will get back to you soon.\n\nYour message:\n${sMessage}`,
           html: clientHtml,
         })
-        .catch((err) => console.warn("Failed to send client copy:", err));
+        .then((info) =>
+          console.log("Client confirmation sent:", {
+            to: sEmail,
+            messageId: info && info.messageId,
+          })
+        )
+        .catch((err) =>
+          console.warn("Failed to send client confirmation:", {
+            message: err && err.message,
+            code: err && err.code,
+            response: err && err.response,
+          })
+        );
     }
 
+    const elapsed = Date.now() - startTs;
+    console.log(`/api/contact completed in ${elapsed}ms`);
     return res
       .status(200)
       .json({ message: "Message sent. We will contact you shortly." });
   } catch (outerErr) {
-    console.error("Unhandled error in contact handler:", outerErr);
+    console.error(
+      "Unhandled error in contact handler:",
+      outerErr && (outerErr.stack || outerErr)
+    );
     return res.status(500).json({ error: "Unexpected server error." });
   }
 };
-
-// small helpers
-function escapeHtml(unsafe = "") {
-  return String(unsafe)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
