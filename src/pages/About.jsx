@@ -6,15 +6,6 @@ import teamDavid from "../assets/team3.jpg";
 import teamSalau from "../assets/team2.jpg";
 import teamIjeoma from "../assets/hero.jpg";
 
-/**
- * About.jsx
- * - Images are imported at the top (bundler-friendly)
- * - Block/stacked layout, full bios, object-contain images
- * - Role shown above each bio and also as hover overlay on image (desktop)
- * - Keyboard accessible (focus-within) and respects reduced-motion
- * - Ensure files exist in src/assets with exact filenames (case-sensitive)
- */
-
 const teamMembers = [
   {
     name: "Otesile Olamide",
