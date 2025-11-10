@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import heroImg from "../assets/hero.jpg";
 import team1 from "../assets/team3.jpg";
-import team2 from "../assets/Otesile.jpg";
+import team2 from "../assets/otesile.jpg";
 import team3 from "../assets/team2.jpg";
 import team4 from "../assets/hero.jpg";
 
@@ -15,7 +15,7 @@ const teamMembers = [
   {
     name: "Otesile Olamide",
     role: "Founder / Principal Partner",
-    bio: `Otesile Olamide is a legal professional with extensive experience in property transactions, corporate law, entertainment law, startup advisory, and tax compliance. He obtained his Bachelor of Laws (LL.B) degree from Olabisi Onabanjo University, Ogun State, and was subsequently called to the Nigerian Bar after completing his training at the Nigerian Law School
+    bio: `Otesile Olamide is a legal professional with extensive experience in property transactions, corporate law, entertainment law, startup advisory, and tax compliance. He obtained his Bachelor of Laws (LL.B) degree from Olabisi Onabanjo University, Ogun State, and was subsequently called to the Nigerian Bar after completing his training at the Nigerian Law School.
 
 As the Founder of Seaside Partners, Olamide has played a key role in shaping the firm’s vision of providing practical, business-oriented legal solutions. His work spans real estate transactions, commercial structuring, and tax advisory, where he combines legal insight with commercial understanding to help clients make informed decisions.
 
