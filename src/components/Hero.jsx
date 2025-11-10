@@ -197,7 +197,9 @@ export default function Hero() {
 
                   <div>
                     <div className="text-2xl font-bold text-white">90%+</div>
-                    <div className="text-sm text-white/80 mt-1">Cases Won</div>
+                    <div className="text-sm text-white/80 mt-1">
+                      Goals achieved
+                    </div>
                   </div>
 
                   <div>

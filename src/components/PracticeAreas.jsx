@@ -15,11 +15,6 @@ import seasideHero from "../assets/seaside-hero.jpg";
 
 const areas = [
   {
-    Icon: FaBolt,
-    title: "Energy",
-    lines: ["Power & Utilities", "Oil & Gas", "Environmental"],
-  },
-  {
     Icon: FaGavel,
     title: "Litigation",
     lines: ["Civil Litigation", "Commercial Litigation", "Criminal Litigation"],
@@ -59,11 +54,6 @@ const areas = [
     Icon: FaUsers,
     title: "Entertainment & Media Law",
     lines: ["Creators", "Corporatecompliance", "Debt recovery"],
-  },
-  {
-    Icon: FaBook,
-    title: "Notary & Public Services",
-    lines: ["Franchising", "Agency & distribution", "Notary services"],
   },
 ];
 

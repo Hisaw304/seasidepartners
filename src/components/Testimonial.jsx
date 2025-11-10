@@ -29,9 +29,9 @@ const testimonials = [
   },
   {
     quote:
-      "Highly competent lawyers who communicate clearly and move fast. Their courtroom presence paid off for our matter.",
-    name: "Emeka Nwosu",
-    role: "SME Owner — Abuja",
+      "Working with Seaside Partners has been amazing! Got everything signed and handed over the document smoothly - real progress all the way. I truly appreciate the effort; you are too much! I'm even considering paying two months upfront just to keep things moving faster.",
+    name: "Mr. Kolawole Disu",
+    role: "House Owner — Lagos",
     rating: 5,
   },
   {

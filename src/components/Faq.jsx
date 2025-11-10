@@ -23,8 +23,8 @@ const FAQ_ITEMS = [
     a: "Bring any documents relevant to your matter (contracts, letters, medical reports, ID). If you're unsure, email a short summary to our intake team before the meeting.",
   },
   {
-    q: "Do you handle cases outside Lagos / internationally?",
-    a: "Yes — we advise on matters across Nigeria and on cross-border issues. For matters outside our jurisdiction we partner with vetted local firms when necessary.",
+    q: "Do you handle cases Nation wide / internationally?",
+    a: "Yes — we advise on matters across Nigeria and on cross-border issues.",
   },
   {
     q: "How are fees structured?",
