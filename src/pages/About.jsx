@@ -152,7 +152,6 @@ export default function About() {
                   {m.name}
                 </h3>
 
-                {/* ROLE ABOVE BIO - visible on all breakpoints */}
                 <p className="mb-4 text-[var(--accent)] font-medium">
                   {m.role}
                 </p>
