@@ -26,8 +26,15 @@ const areas = [
   },
   {
     Icon: FaBuilding,
-    title: "Corporate Law",
-    lines: ["Restructuring", "Project Finance", "Governance & Compliance"],
+    title: "Corporate & Commercial Law",
+    lines: [
+      "Restructuring",
+      "Project Finance",
+      "Governance & Compliance",
+      "Company formation",
+      "Corporate compliance",
+      "Debt recovery",
+    ],
   },
   {
     Icon: FaBriefcase,
@@ -50,8 +57,8 @@ const areas = [
   },
   {
     Icon: FaUsers,
-    title: "Commercial",
-    lines: ["Company formation", "Corporate compliance", "Debt recovery"],
+    title: "Entertainment & Media Law",
+    lines: ["Creators", "Corporatecompliance", "Debt recovery"],
   },
   {
     Icon: FaBook,

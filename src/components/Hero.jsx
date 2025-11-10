@@ -74,25 +74,29 @@ export default function Hero() {
               variants={fadeUp}
               className="inline-block mb-4 text-sm uppercase tracking-wider font-medium text-[var(--color-accent)] border-l-4 border-[var(--color-accent)] pl-3"
             >
-              Solicitors • Advocates • Notaries Public
+              Solicitors • Advocates • ARBITRATORS
             </motion.p>
 
             <motion.h1
               variants={slideInLeft}
               className="text-white font-serif font-extrabold leading-tight text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6"
             >
-              Don’t settle for less — trust our expert attorneys and get the
-              compensation and justice you deserve.
+              Strategic legal solutions for a changing world, Driven by
+              integrity and Defined by results. Your vision, our legal strength.
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
               className="text-white/90 text-base md:text-lg max-w-2xl mb-8"
             >
-              At Seaside Partners, we do whatever it takes to win your case —
-              whether that means trial or negotiated settlement. We combine
-              relentless advocacy with a personalised approach so you get the
-              compensation and justice you deserve.
+              At Seaside Partners, we go beyond traditional legal practice,
+              combining deep legal expertise with strategic business insight.
+              Our approach is modern, tech-conscious, and client-focused,
+              helping individuals and organizations navigate complex issues in
+              property, corporate, tax, entertainment, and startup law with
+              clarity and confidence. We don’t just provide legal solutions, we
+              build lasting partnerships that drive growth, compliance, and
+              innovation.
             </motion.p>
 
             <motion.div
@@ -236,7 +240,7 @@ export default function Hero() {
 
             <div>
               <div className="text-2xl font-bold text-white">90%+</div>
-              <div className="text-sm text-white/80 mt-1">Cases Won</div>
+              <div className="text-sm text-white/80 mt-1">Goals achieved</div>
             </div>
 
             <div>
