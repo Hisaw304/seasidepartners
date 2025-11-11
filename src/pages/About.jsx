@@ -4,7 +4,7 @@ import heroImg from "../assets/hero.jpg";
 import teamOtesile from "../assets/otesile.jpg";
 import teamDavid from "../assets/team3.jpg";
 import teamSalau from "../assets/team2.jpg";
-import teamIjeoma from "../assets/hero.jpg";
+import teamIjeoma from "../assets/team4.jpg";
 
 const teamMembers = [
   {
@@ -20,16 +20,6 @@ With a detail-oriented and strategic approach, he has advised clients on corpora
 Olamide’s practice is guided by integrity, precision, and innovation. His growing interest in the intersection of law, technology, and sports continues to inform his advisory style, positioning him as a modern legal practitioner dedicated to excellence and long-term client success.`,
   },
   {
-    name: "David Akintunde",
-    role: "Legal Associate",
-    image: teamDavid,
-    bio: `David Akintunde is a legal professional with a robust background in law, dispute resolution, and corporate compliance. He obtained his Bachelor of Laws (LL.B) degree from Olabisi Onabanjo University, Ogun State, and was subsequently called to the Nigerian Bar after completing his training at the Nigerian Law School.
-
-David began his legal career during his National Youth Service at the Department of Legal Drafting and Parliamentary Counseling, Oyo State Ministry of Justice, where he contributed to legislative and policy development initiatives. Over the years, he has gained versatile experience working across diverse sectors, including real estate and legal practice—handling major property transactions, litigation, and dispute resolution matters.
-
-A certified dispute resolution practitioner, David combines legal expertise with a strong commitment to ethical compliance and effective problem-solving. He is currently pursuing a Master of Laws (LL.M) degree at the University of Hertfordshire, United Kingdom, with a focus on Compliance and Data Protection Law.`,
-  },
-  {
     name: "Salau Temidayo Isiaq",
     role: "Co-Founder / Associate",
     image: teamSalau,
@@ -41,6 +31,17 @@ Temidayo’s experience covers tax planning and compliance, property documentati
 
 Driven by innovation, integrity, and a results-oriented mindset, Temidayo continues to build a reputation as a forward-thinking lawyer with a deep understanding of Nigeria’s evolving legal and business landscape.`,
   },
+  {
+    name: "David Akintunde",
+    role: "Legal Associate",
+    image: teamDavid,
+    bio: `David Akintunde is a legal professional with a robust background in law, dispute resolution, and corporate compliance. He obtained his Bachelor of Laws (LL.B) degree from Olabisi Onabanjo University, Ogun State, and was subsequently called to the Nigerian Bar after completing his training at the Nigerian Law School.
+
+David began his legal career during his National Youth Service at the Department of Legal Drafting and Parliamentary Counseling, Oyo State Ministry of Justice, where he contributed to legislative and policy development initiatives. Over the years, he has gained versatile experience working across diverse sectors, including real estate and legal practice—handling major property transactions, litigation, and dispute resolution matters.
+
+A certified dispute resolution practitioner, David combines legal expertise with a strong commitment to ethical compliance and effective problem-solving. He is currently pursuing a Master of Laws (LL.M) degree at the University of Hertfordshire, United Kingdom, with a focus on Compliance and Data Protection Law.`,
+  },
+
   {
     name: "Ijeoma Ubochi",
     role: "Digital Management Lead",
