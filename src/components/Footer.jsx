@@ -64,9 +64,9 @@ export default function Footer() {
           </Link>
 
           <p className="text-sm" style={{ color: "var(--color-dark-blue)" }}>
-            Sea Side Partner is a law firm dedicated to providing excellent
-            legal services with a personal touch. We handle a broad range of
-            legal matters with professionalism and care.
+            Seaside Partners is a Lagos and Abuja-based law firm offering
+            corporate, property, IP, and entertainment legal services with a
+            client-first approach.
           </p>
         </div>
 
@@ -101,7 +101,7 @@ export default function Footer() {
             <div>
               phone:{" "}
               <a href="tel:+2349013916630" className="footer-link">
-                +234 901 391 6630
+                +234 (0) 901 391 6630
               </a>
             </div>
           </address>

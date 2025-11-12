@@ -101,7 +101,7 @@ export default function Contact() {
             className="text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold leading-tight"
             style={{ color: "var(--dark-blue)" }}
           >
-            Get in touch with Seaside Partners
+            Contact Seaside Partners. Expert Legal Advice in Lagos and Abuja.
           </motion.h2>
 
           <motion.p
@@ -238,7 +238,7 @@ export default function Contact() {
                       border: "1px solid rgba(2,6,23,0.06)",
                       color: "var(--dark-blue)",
                     }}
-                    placeholder="+234 904 691 6673"
+                    placeholder="+234 (0) 901 391 6630"
                     aria-invalid={!!errors.phone}
                     required
                   />

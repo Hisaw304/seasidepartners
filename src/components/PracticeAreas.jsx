@@ -9,16 +9,45 @@ import {
   FaFileContract,
   FaLightbulb,
   FaUsers,
+  FaHome,
+  FaBalanceScale,
   FaBook,
+  FaRocket,
 } from "react-icons/fa";
 import seasideHero from "../assets/seaside-hero.jpg";
 
 const areas = [
   {
-    Icon: FaGavel,
-    title: "Litigation",
-    lines: ["Civil Litigation", "Commercial Litigation", "Criminal Litigation"],
+    Icon: FaBalanceScale,
+    title: "Tax and Compliance Advisory",
+    lines: [
+      "Tax Structuring & Planning",
+      "Regulatory Compliance",
+      "Transfer Pricing & Audits",
+      "Tax Dispute Resolution",
+    ],
   },
+  {
+    Icon: FaHome,
+    title: "Real Estate",
+    lines: [
+      "Property Acquisition & Sale",
+      "Leasing & Tenancy",
+      "Land Use & Development",
+      "Real Estate Due Diligence",
+    ],
+  },
+  {
+    Icon: FaRocket,
+    title: "Startup and Tech Advisory",
+    lines: [
+      "Entity Formation & Structuring",
+      "Intellectual Property Protection",
+      "Venture Capital & Fundraising",
+      "Technology Contracts & Licensing",
+    ],
+  },
+
   {
     Icon: FaBuilding,
     title: "Corporate & Commercial Law",
@@ -53,7 +82,12 @@ const areas = [
   {
     Icon: FaUsers,
     title: "Entertainment & Media Law",
-    lines: ["Creators", "Corporatecompliance", "Debt recovery"],
+    lines: ["Creators", "Corporate compliance", "Debt recovery"],
+  },
+  {
+    Icon: FaGavel,
+    title: "Litigation",
+    lines: ["Civil Litigation", "Commercial Litigation", "Criminal Litigation"],
   },
 ];
 
@@ -198,6 +232,18 @@ export default function PracticeAreas() {
 
                     {/* Optional detail area with subtle arrow — kept at bottom so cards are visually consistent */}
                     <div className="mt-auto pt-3">
+                      {/* Book a consultation button */}
+                      <a
+                        href="#contact"
+                        className="inline-flex items-center justify-center text-sm font-semibold px-3 py-2 rounded-md transition mb-2"
+                        style={{
+                          background: "var(--color-accent)",
+                          color: "#fff",
+                        }}
+                        aria-label={`Book a consultation for ${title}`}
+                      >
+                        Book a consultation for {title} today
+                      </a>
                       <a
                         href="#contact"
                         className="inline-flex items-center gap-2 text-sm font-medium px-3 py-1.5 rounded-md transition"

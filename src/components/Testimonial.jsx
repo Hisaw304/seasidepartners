@@ -16,28 +16,28 @@ const testimonials = [
   {
     quote:
       "Seaside Partners handled my case with professionalism and compassion. I felt supported every step of the way.",
-    name: "Olumide Ade",
+    name: "Olumide A",
     role: "Client — Lagos",
     rating: 5,
   },
   {
     quote:
       "Clear, practical advice that helped us negotiate a favourable settlement — the team is strategic and relentless in the best way.",
-    name: "Chinaza Okeke",
+    name: "Chinaza O",
     role: "Founder — Lagos",
     rating: 4.5,
   },
   {
     quote:
       "Working with Seaside Partners has been amazing! Got everything signed and handed over the document smoothly - real progress all the way. I truly appreciate the effort; you are too much! I'm even considering paying two months upfront just to keep things moving faster.",
-    name: "Mr. Kolawole Disu",
+    name: "Mr. Kolawole D",
     role: "House Owner — Lagos",
     rating: 5,
   },
   {
     quote:
       "We appreciated the transparency on fees and options — nothing was left unclear. Results-oriented and respectful.",
-    name: "Aisha Bello",
+    name: "Aisha B",
     role: "Client — Abuja",
     rating: 4,
   },

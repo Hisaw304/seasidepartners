@@ -23,7 +23,7 @@ const FAQ_ITEMS = [
     a: "Bring any documents relevant to your matter (contracts, letters, medical reports, ID). If you're unsure, email a short summary to our intake team before the meeting.",
   },
   {
-    q: "Do you handle cases Nation wide / internationally?",
+    q: "Do you handle cases nationwide / internationally?",
     a: "Yes — we advise on matters across Nigeria and on cross-border issues.",
   },
   {
@@ -106,7 +106,7 @@ export default function Faq() {
             style={{ color: "var(--dark-blue)" }}
           >
             Quick answers to the questions we hear most. If you don’t see what
-            you need, please contact us for a personalised response.
+            you need, please contact us for a personalized response.
           </motion.p>
         </div>
 

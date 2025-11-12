@@ -79,24 +79,27 @@ export default function Hero() {
 
             <motion.h1
               variants={slideInLeft}
-              className="text-white font-serif font-extrabold leading-tight text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6"
+              className="text-white font-serif font-extrabold leading-tight text-4xl md:text-4xl lg:text-5xl xl:text-6xl mb-6"
             >
-              Strategic legal solutions for a changing world, Driven by
-              integrity and Defined by results. Your vision, our legal strength.
+              Seaside Partners; Strategic Legal Solutions in Lagos and Abuja.
+            </motion.h1>
+            <motion.h1
+              variants={slideInLeft}
+              className="text-white font-serif font-extrabold leading-tight text-2xl md:text-3xl lg:text-3xl xl:text-4xl mb-6"
+            >
+              Driven by integrity and defined by results. your vision, our legal
+              strength.
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
               className="text-white/90 text-base md:text-lg max-w-2xl mb-8"
             >
-              At Seaside Partners, we go beyond traditional legal practice,
-              combining deep legal expertise with strategic business insight.
-              Our approach is modern, tech-conscious, and client-focused,
-              helping individuals and organizations navigate complex issues in
-              property, corporate, tax, entertainment, and startup law with
-              clarity and confidence. We don’t just provide legal solutions, we
-              build lasting partnerships that drive growth, compliance, and
-              innovation.
+              Seaside Partners combines deep legal expertise with strategic
+              business insight. We help individuals and organizations navigate
+              complex issues in property, corporate, tax, entertainment, and
+              startup law. Our client-focused, tech-enabled approach ensures
+              clarity, compliance, and sustainable growth.
             </motion.p>
 
             <motion.div
@@ -112,7 +115,7 @@ export default function Hero() {
                 }}
                 aria-label="Book an appointment"
               >
-                Book an Appointment
+                Book Your Consultation Today
               </button>
 
               <a
@@ -227,13 +230,13 @@ export default function Hero() {
       </div>
 
       <motion.div
-        className="block lg:hidden mt-10 px-4 pb-6"
+        className="block lg:hidden mt-2 px-4 pb-2"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.5 }}
         variants={statsSlide}
       >
-        <div className="relative p-4 rounded-xl bg-gradient-to-t from-black/70 to-transparent shadow-2xl">
+        <div className="relative p-2 rounded-xl bg-gradient-to-t from-black/70 to-transparent shadow-2xl">
           <div className="grid grid-cols-3 gap-4 text-center">
             <div>
               <div className="text-2xl font-bold text-white">100+</div>
