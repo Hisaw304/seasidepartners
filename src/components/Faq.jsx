@@ -269,7 +269,7 @@ export default function Faq() {
               Still have questions? Contact us
             </a>
 
-            <button
+            {/* <button
               onClick={() => {
                 setQuery("");
                 setOpenIndex(null);
@@ -279,7 +279,7 @@ export default function Faq() {
               style={{ color: "var(--dark-blue)" }}
             >
               Clear search
-            </button>
+            </button> */}
           </motion.div>
         </div>
       </div>

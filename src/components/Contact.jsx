@@ -315,7 +315,7 @@ export default function Contact() {
                   <span>{loading ? "Sending..." : "Submit your case"}</span>
                 </button>
 
-                <button
+                {/* <button
                   type="button"
                   onClick={() => {
                     setForm({ name: "", email: "", phone: "", message: "" });
@@ -326,7 +326,7 @@ export default function Contact() {
                   style={{ color: "var(--dark-blue)" }}
                 >
                   Reset
-                </button>
+                </button> */}
               </div>
             </motion.form>
           </div>
@@ -399,7 +399,7 @@ export default function Contact() {
                         href="tel:+2349013916630"
                         className="text-white/90 hover:text-white"
                       >
-                        09013916630
+                        +234 (0) 901 391 6630
                       </a>
                     </div>
 
